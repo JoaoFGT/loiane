@@ -4,16 +4,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { alunosGuard } from './guards/alunos.guard';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
     path: 'home',
-    canActivate: [authGuard],
+    canMatch: [authGuard],
     component: HomeComponent,
   },
   {
@@ -22,16 +18,25 @@ const routes: Routes = [
   },
   {
     path: 'cursos',
-    canActivate: [authGuard],
+    canMatch: [authGuard],
     loadChildren: () =>
       import('./pages/cursos/cursos.module').then((mod) => mod.CursosModule),
   },
   {
     path: 'alunos',
-    canActivate: [authGuard],
+    canMatch: [authGuard],
     //canActivateChild: [alunosGuard],
     loadChildren: () =>
       import('./pages/alunos/alunos.module').then((mod) => mod.AlunosModule),
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 

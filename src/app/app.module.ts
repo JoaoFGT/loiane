@@ -12,6 +12,7 @@ import { NavbarComponent } from './layout/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CursosService } from './pages/cursos/cursos.service';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CursosService } from './pages/cursos/cursos.service';
     LoginComponent,
     LayoutComponent,
     NavbarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

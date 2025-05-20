@@ -1,7 +1,7 @@
-<h5> {{ aluno.nome ?? 'Aluno sem nome' }} </h5>
+<h5> {{ aluno?.nome ?? 'Aluno sem nome' }} </h5>
 <ul>
-  <li>Id: {{ aluno.id }}</li>
-  <li>Email: {{ aluno.email }}</li>
+  <li>Id: {{ aluno?.id }}</li>
+  <li>Email: {{ aluno?.email }}</li>
 </ul>
 
 <a class="btn btn-success" (click)="editarAluno()" >Editar</a>
